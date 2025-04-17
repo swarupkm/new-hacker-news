@@ -28,15 +28,28 @@ function timeElapsed(unixTimestamp: number) {
 }
 
 export function Story({ story, idx }: { story: StoryProps, idx: number }) {
-
-  return (<>
-    <div>
-      <div>{idx}</div>
-      <div>{story.title}</div>
-      <div>{hostName(story.url)}</div>
+  return (
+    <div className="py-1">
+      <div className="flex items-baseline">
+        <span className="text-[#828282] text-[13.3px] pr-1">{idx}.</span>
+        <div className="flex flex-col space-y-0.5">
+          <div className="flex items-center">
+            <a href={story.url} className="text-[13.3px] visited:text-[#828282] hover:underline mr-1">
+              {story.title}
+            </a>
+            {story.url && (
+              <span className="text-[13.3px] text-[#828282]">
+                ({hostName(story.url)})
+              </span>
+            )}
+          </div>
+          <div className="text-[10.6px] text-[#828282]">
+            {story.score} points by {story.by} {timeElapsed(story.time)} ago | 
+            {story.descendants === 0 ? ' discuss' : 
+              ` ${story.descendants} comment${story.descendants !== 1 ? 's' : ''}`}
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      {story.score} points by {story.by} {timeElapsed(story.time)} ago | {story.descendants} comments
-    </div>
-  </>);
+  );
 }
