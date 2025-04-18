@@ -1,6 +1,8 @@
 import Header from './Header';
-import Home from './Home';
 import Footer from './Footer';
+import { Route, Routes } from 'react-router';
+import Home from './pages/Home';
+import New from './pages/New';
 
 function App() {
   return (
@@ -8,7 +10,10 @@ function App() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Header />
         <main className="py-4">
-          <Home />
+          <Routes>
+            <Route path="/" element={ <Home/>} />
+            <Route path="/newest" element={ <New/>} />
+          </Routes>
         </main>
         <Footer />
       </div>

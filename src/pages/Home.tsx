@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { fetchTopStories, fetchStories } from './services/api';
-import { Story } from './Story';
+import { fetchTopStories, fetchStories } from '../services/api';
+import { Story } from '../Story';
 
 const PAGE_SIZE = 30
 

@@ -11,6 +11,17 @@ export const fetchTopStories = async () => {
   }
 };
 
+export const fetchNewStories = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/newstories.json`);
+    const storyIds = await response.json();
+    return storyIds;
+  } catch (error) {
+    console.error('Error fetching top stories:', error);
+    throw error;
+  }
+};
+
 export const fetchItem = async (id: string) => {
   try {
     const response = await fetch(`${BASE_URL}/item/${id}.json`);
