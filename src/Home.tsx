@@ -5,14 +5,25 @@ import { Story } from './Story';
 const PAGE_SIZE = 30
 
 function Home() {
+  const [allStoryIds, setAllStoryIds] = useState([]);
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
+    async function loadAllSotyIds() {
+      const storyIds = await fetchTopStories();
+      setAllStoryIds(storyIds); 
+    }
+    loadAllSotyIds()
+  }, [])
+
+  useEffect(() => {
     async function load() {
       try {
-        const storyIds = await fetchTopStories(pageNumber, PAGE_SIZE);
+        const start = (pageNumber - 1) * PAGE_SIZE;
+        const end = start + PAGE_SIZE;
+        const storyIds = allStoryIds.slice(start, end);
         const fetchedStories = await fetchStories(storyIds);
         setStories(fetchedStories);
       } catch (error) {
@@ -25,7 +36,8 @@ function Home() {
     return () => {
       setLoading(true)
     }
-  }, [pageNumber])
+  }, [allStoryIds, pageNumber])
+
   function goToPrevious() {
     if (pageNumber === 1) return;
     setPageNumber(pageNumber - 1);

@@ -1,12 +1,10 @@
 const BASE_URL = 'https://hacker-news.firebaseio.com/v0';
 
-export const fetchTopStories = async (pageNumber: number, pageSize = 30) => {
+export const fetchTopStories = async () => {
   try {
     const response = await fetch(`${BASE_URL}/topstories.json`);
     const storyIds = await response.json();
-    const start = (pageNumber - 1) * pageSize
-    const end = start + pageSize
-    return storyIds.slice(start, end);
+    return storyIds;
   } catch (error) {
     console.error('Error fetching top stories:', error);
     throw error;
