@@ -14,6 +14,18 @@ function Header() {
         <Link to="/newest" className="text-[13.3px] text-black hover:text-gray-800">
           new
         </Link>
+        <span className="text-black">|</span>
+        <Link to="/best" className="text-[13.3px] text-black hover:text-gray-800">
+          best
+        </Link>
+        <span className="text-black">|</span>
+        <Link to="/ask" className="text-[13.3px] text-black hover:text-gray-800">
+          ask
+        </Link>
+        <span className="text-black">|</span>
+        <Link to="/show" className="text-[13.3px] text-black hover:text-gray-800">
+          show
+        </Link>
       </nav>
     </header>
   );

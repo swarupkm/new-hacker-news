@@ -22,6 +22,39 @@ export const fetchNewStories = async () => {
   }
 };
 
+export const fetchBestStories = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/beststories.json`);
+    const storyIds = await response.json();
+    return storyIds;
+  } catch (error) {
+    console.error('Error fetching top stories:', error);
+    throw error;
+  }
+};
+
+export const fetchAskStories = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/askstories.json`);
+    const storyIds = await response.json();
+    return storyIds;
+  } catch (error) {
+    console.error('Error fetching top stories:', error);
+    throw error;
+  }
+};
+
+export const fetchShowStories = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/showstories.json`);
+    const storyIds = await response.json();
+    return storyIds;
+  } catch (error) {
+    console.error('Error fetching top stories:', error);
+    throw error;
+  }
+};
+
 export const fetchItem = async (id: string) => {
   try {
     const response = await fetch(`${BASE_URL}/item/${id}.json`);

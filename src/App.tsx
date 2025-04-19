@@ -3,6 +3,9 @@ import Footer from './Footer';
 import { Route, Routes } from 'react-router';
 import Home from './pages/Home';
 import New from './pages/New';
+import Best from './pages/Best';
+import Ask from './pages/Ask';
+import Show from './pages/Show';
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
           <Routes>
             <Route path="/" element={ <Home/>} />
             <Route path="/newest" element={ <New/>} />
+            <Route path="/best" element={ <Best/>} />
+            <Route path="/ask" element={ <Ask/>} />
+            <Route path="/show" element={ <Show/>} />
           </Routes>
         </main>
         <Footer />
