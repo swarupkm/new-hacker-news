@@ -26,6 +26,10 @@ function Header() {
         <Link to="/show" className="text-[13.3px] text-black hover:text-gray-800">
           show
         </Link>
+        <span className="text-black">|</span>
+        <Link to="/jobs" className="text-[13.3px] text-black hover:text-gray-800">
+          jobs
+        </Link>
       </nav>
     </header>
   );

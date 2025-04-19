@@ -6,6 +6,7 @@ import New from './pages/New';
 import Best from './pages/Best';
 import Ask from './pages/Ask';
 import Show from './pages/Show';
+import Jobs from './pages/Jobs';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/best" element={ <Best/>} />
             <Route path="/ask" element={ <Ask/>} />
             <Route path="/show" element={ <Show/>} />
+            <Route path="/jobs" element={ <Jobs/>} />
           </Routes>
         </main>
         <Footer />

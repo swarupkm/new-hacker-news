@@ -54,6 +54,16 @@ export const fetchShowStories = async () => {
     throw error;
   }
 };
+export const fetchJobsStories = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/jobstories.json`);
+    const storyIds = await response.json();
+    return storyIds;
+  } catch (error) {
+    console.error('Error fetching top stories:', error);
+    throw error;
+  }
+};
 
 export const fetchItem = async (id: string) => {
   try {
