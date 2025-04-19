@@ -11,9 +11,9 @@ import Jobs from './pages/Jobs';
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-30">
         <Header />
-        <main className="py-4">
+        <main className="py-4 bg-[#F7F7F2]">
           <Routes>
             <Route path="/" element={ <Home/>} />
             <Route path="/newest" element={ <New/>} />

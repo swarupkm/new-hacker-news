@@ -10,8 +10,8 @@ function Header() {
 
   return (
     <header className="bg-[#ff6600] py-1.5">
-      <nav className="max-w-4xl mx-auto px-2 flex items-center space-x-2">
-        <Link to="/">
+      <nav className="max-w-6xl mx-2 flex items-center justify-start space-x-2">
+      <Link to="/">
           <img src='src/assets/logo.svg' className='border'/>
         </Link>
         <Link to="/" className={`font-bold ${getLinkClass('/')}`}>

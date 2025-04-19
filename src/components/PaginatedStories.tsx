@@ -41,11 +41,14 @@ function PaginatedStories({ storyIds }: PaginatedStoriesProps) {
     <>
       <div>
         {stories.map((story, index) => (
-          <Story 
-            key={story.id} 
-            story={story} 
-            idx={(pageNumber-1)*PAGE_SIZE + index + 1} 
-          />
+          <>
+            <Story 
+              key={story.id} 
+              story={story} 
+              idx={(pageNumber-1)*PAGE_SIZE + index + 1} 
+            />
+            <div className='h-[5px]'/>
+          </>
         ))}
       </div>
       <div className="flex justify-center items-center mt-5 gap-2.5">
