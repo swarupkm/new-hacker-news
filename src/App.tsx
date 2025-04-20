@@ -7,6 +7,7 @@ import Best from './pages/Best';
 import Ask from './pages/Ask';
 import Show from './pages/Show';
 import Jobs from './pages/Jobs';
+import Item from './pages/Item';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/ask" element={ <Ask/>} />
             <Route path="/show" element={ <Show/>} />
             <Route path="/jobs" element={ <Jobs/>} />
+            <Route path="/item" element={ <Item/>} />
           </Routes>
         </main>
         <Footer />

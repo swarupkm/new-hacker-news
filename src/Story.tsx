@@ -1,4 +1,7 @@
+import { Link } from 'react-router';
+
 type StoryProps = {
+  id: string
   title: string;
   score: number;
   by: string;
@@ -50,9 +53,11 @@ export function Story({ story, idx }: { story: StoryProps, idx: number }) {
               {timeElapsed(story.time)} ago
             </div> :
             <div className="text-[10.6px] text-[#828282]">
-              {story.score} points by {story.by} {timeElapsed(story.time)} ago | 
-              {story.descendants === 0 ? ' discuss' : 
-                ` ${story.descendants} comment${story.descendants !== 1 ? 's' : ''}`}
+                {story.score} points by {story.by} {timeElapsed(story.time)} ago | 
+                <Link to={{pathname: '/item', search: `?id=${story.id}`}} state={story}>
+                    {story.descendants === 0 ? ' discuss' : 
+                      ` ${story.descendants} comment${story.descendants !== 1 ? 's' : ''}`}
+                </Link>
             </div>
           }
         </div>

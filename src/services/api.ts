@@ -86,3 +86,16 @@ export const fetchStories = async (storyIds: string[]) => {
     throw error;
   }
 };
+
+
+export const fetchComments = async (commentIds: string[]) => {
+  try {
+    const stories = await Promise.all(
+      commentIds.map(id => fetchItem(id))
+    );
+    return stories;
+  } catch (error) {
+    console.error('Error fetching comments:', error);
+    throw error;
+  }
+};
